@@ -8,12 +8,16 @@ const Example = () => {
      <div className="container mx-auto px-4 relative z-10 pt-[100px]">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
-            <span className="text-[#FFD700] text-xl font-bold">02</span>
-            <span className="w-8 h-px bg-[#FFD700]"></span>
-            <span className="text-[#A9A9A9] text-sm font-semibold tracking-widest uppercase">OUR PROCESS</span>
+            <span className="text-yellow-400 text-xl font-bold">02</span>
+            <span className="w-8 h-px bg-yellow-400"></span>
+            <span className="text-neutral-400 text-sm font-semibold tracking-widest uppercase">OUR PROCESS</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">How We <span className="text-[#FFD700]">Work</span></h2>
-          <p className="text-[#A9A9A9] text-lg max-w-2xl mx-auto">Our proven development process delivers exceptional results through a streamlined workflow</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            How We <span className="text-yellow-400">Work</span>
+          </h2>
+          <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+            Our proven development process delivers exceptional results through a streamlined workflow
+          </p>
         </div>
        </div>
       <SwapColumnFeatures />
@@ -95,11 +99,13 @@ const Content = ({ setFeatureInView, featureInView }) => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          <span className="rounded-full bg-indigo-600 px-2 py-1.5 text-xs font-medium text-white">
+          <span className="rounded-full bg-yellow-400/90 px-3 py-1.5 text-xs font-semibold text-neutral-900 shadow-sm ring-2 ring-yellow-300">
             {featureInView.callout}
           </span>
-          <p className="my-3 text-5xl font-bold">{featureInView.title}</p>
-          <p className="text-slate-600">{featureInView.description}</p>
+          <p className="my-3 text-4xl md:text-5xl font-bold text-white drop-shadow">
+            {featureInView.title}
+          </p>
+          <p className="text-neutral-300">{featureInView.description}</p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -116,24 +122,24 @@ const Content = ({ setFeatureInView, featureInView }) => {
 
 const ExampleFeature = ({ featureInView }) => {
   return (
-    <div className="relative h-96 w-full rounded-xl bg-slate-800 shadow-xl">
-      <div className="flex w-full gap-1.5 rounded-t-xl bg-slate-900 p-3">
-        <div className="h-3 w-3 rounded-full bg-red-500" />
-        <div className="h-3 w-3 rounded-full bg-yellow-500" />
-        <div className="h-3 w-3 rounded-full bg-green-500" />
+    <div className="relative h-96 w-full rounded-xl bg-neutral-900 shadow-2xl border border-neutral-800">
+      <div className="flex w-full gap-1.5 rounded-t-xl bg-neutral-800 p-3">
+        <div className="h-3 w-3 rounded-full bg-red-400" />
+        <div className="h-3 w-3 rounded-full bg-yellow-400" />
+        <div className="h-3 w-3 rounded-full bg-green-400" />
       </div>
-      <div className="p-2">
-        <p className="font-mono text-sm text-slate-200">
+      <div className="p-4">
+        <p className="font-mono text-[15px] text-neutral-100">
           <span className="text-green-300">~</span> Show a part of your product
           that explains what{" "}
-          <span className="inline-block rounded bg-indigo-600 px-1 font-semibold">
+          <span className="inline-block rounded bg-yellow-400/60 px-1 font-semibold text-neutral-900">
             "{featureInView.title}"
           </span>{" "}
           means.
         </p>
       </div>
 
-      <span className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] text-9xl text-slate-700">
+      <span className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] text-9xl text-yellow-900/30">
         <featureInView.Icon />
       </span>
     </div>
@@ -145,37 +151,37 @@ export default Example;
 const features = [
   {
     id: 1,
-    callout: "Get noticed",
-    title: "It's simple",
+    callout: "Step 1",
+    title: "Requirement Analysis",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor iusto quaerat qui, illo incidunt suscipit fugiat distinctio officia earum eius quae officiis quis harum animi.",
+      "We begin by understanding your goals, audience, and technical needs. Our team collaborates with you to gather detailed requirements, ensuring clarity and alignment from the start.",
     contentPosition: "r",
     Icon: FiEye,
   },
   {
     id: 2,
-    callout: "Find people",
-    title: "They're all here",
+    callout: "Step 2",
+    title: "Planning & Design",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor iusto quaerat qui, illo incidunt suscipit fugiat distinctio officia earum eius quae officiis quis harum animi.",
+      "Based on the requirements, we craft a strategic plan and design a user-centric interface. Wireframes and mockups are shared for feedback before development begins.",
     contentPosition: "l",
     Icon: FiSearch,
   },
   {
     id: 3,
-    callout: "Have fun",
-    title: "Let's party",
+    callout: "Step 3",
+    title: "Development",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor iusto quaerat qui, illo incidunt suscipit fugiat distinctio officia earum eius quae officiis quis harum animi.",
+      "Our developers bring your vision to life using clean, scalable, and modern code. We follow best practices and agile methodology to ensure rapid and reliable delivery.",
     contentPosition: "r",
     Icon: FiPlay,
   },
   {
     id: 4,
-    callout: "Get paid",
-    title: "Cha-ching!",
+    callout: "Step 4",
+    title: "Test & Deployment",
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor iusto quaerat qui, illo incidunt suscipit fugiat distinctio officia earum eius quae officiis quis harum animi.",
+      "Every feature is rigorously tested for functionality, performance, and security. After final approval, we launch your project smoothly and offer post-launch support.",
     contentPosition: "l",
     Icon: FiDollarSign,
   },
